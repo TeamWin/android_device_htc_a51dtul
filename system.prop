@@ -1,0 +1,19 @@
+#
+# system.prop for htc_a51dtul
+#
+
+persist.fuse_sdcard=true
+ro.storage_structure = 10
+
+#For usb storage
+ro.usb_host = 1
+ro.storage_encryption_type = 2
+
+# system props for inscreen virtual key
+qemu.hw.mainkeys=0
+
+#system props for time-services
+persist.timed.enable=true
+
+# Display Info
+ro.product.display_resolution = 5.5 inch 720p resolution
