@@ -9,7 +9,7 @@ TARGET_OTA_ASSERT_DEVICE := a51ul a51dtul a51tuhl htc_a51dtul htc_a51ul htc_a51t
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8939
+TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Architecture
