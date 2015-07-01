@@ -9,10 +9,12 @@ TARGET_OTA_ASSERT_DEVICE := a51ul a51dtul a51tuhl htc_a51dtul htc_a51ul htc_a51t
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM := msm8939
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Architecture
+# Temporary patch
+# For 64bit comment out A51_32_BIT
 A51_32_BIT := true
 ifneq ($(A51_32_BIT),true)
 	TARGET_ARCH := arm64
@@ -86,7 +88,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 
 #Pixel if or? And configure KERNEL_OBJ
 TARGET_USES_QCOM_BSP := false
-#BOARD_CUSTOM_GRAPHICS := device/htc/htc_a51dtul/recovery/graphics_cn.c
 
 #Keys
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := device/htc/htc_a51dtul/recovery/recovery_keys.c
@@ -108,19 +109,18 @@ TARGET_RECOVERY_FSTAB := device/htc/htc_a51dtul/rootdir/etc/recovery.fstab
 
 #/data/media/0 Storage
 RECOVERY_USE_MIGRATED_STORAGE := true
-#RECOVERY_NEED_SELINUX_FIX := true
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 
 #Virtual Key
 RECOVERY_USE_VIRTUAL_KEY := true
 
-#Fix Wipe
+#Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 #TWRP flags
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_USB_STORAGE := true
+#TW_NO_USB_STORAGE := true
 TW_INCLUDE_JB_CRYPTO := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
